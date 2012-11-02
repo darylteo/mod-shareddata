@@ -17,8 +17,10 @@
 package org.vertx.mods.shareddata;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -34,43 +36,61 @@ public abstract class SharedSet<E> implements Set<E> {
      this.setName = setName;
   }
 
+  @Override
   public int size() {
     return impl.size();
   }
 
+  @Override
   public boolean isEmpty() {
     return impl.isEmpty();
   }
 
+  @Override
   public boolean contains(Object value) {
     return impl.contains(value);
   }
 
+  @Override
   public Iterator<E> iterator() {
-    return impl.iterator();
+    Set<E> copied = new HashSet<>();
+    for (E e : this.impl) {
+      copied.add(Checker.copyIfRequired(e));
+    }
+    return copied.iterator();
   }
 
+  @Override
   public Object[] toArray() {
-    return impl.toArray();
+    return this.toArray(new Object[this.impl.size()]);
   }
 
+  @Override
   public <T> T[] toArray(T[] a) {
-    return impl.toArray(a);
+    List<E> copied = new LinkedList<>();
+    for (E e : this.impl) {
+      copied.add(Checker.copyIfRequired(e));
+    }
+    return copied.toArray(a);
   }
 
+  @Override
   public boolean add(E e) {
     Checker.checkType(e);
     return impl.add(e);
   }
 
+  @Override
   public boolean remove(Object value) {
     return impl.remove(value);
   }
 
+  @Override
   public boolean containsAll(Collection<?> values) {
     return impl.containsAll(values);
   }
 
+  @Override
   public boolean addAll(Collection<? extends E> values) {
     for (E value : values){
       Checker.checkType(value);
@@ -79,14 +99,17 @@ public abstract class SharedSet<E> implements Set<E> {
     return this.impl.addAll(values);
   }
 
+  @Override
   public boolean retainAll(Collection<?> values) {
     return impl.retainAll(values);
   }
 
+  @Override
   public boolean removeAll(Collection<?> values) {
     return impl.removeAll(values);
   }
 
+  @Override
   public void clear() {
     impl.clear();
   }

@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentMap;
 
 public class DefaultSharedSetImpl<E> implements Set<E> {
 
-  private ConcurrentMap<E, Object> map = new ConcurrentHashMap<>();
+  private final ConcurrentMap<E, Object> map = new ConcurrentHashMap<>();
   private static final Object O = "wibble";
 
   @Override
