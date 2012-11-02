@@ -2,7 +2,7 @@ package org.vertx.mods.shareddata.impl;
 
 import java.util.LinkedList;
 
-import org.vertx.java.core.shareddata.SharedList;
+import org.vertx.mods.shareddata.SharedList;
 
 public class DefaultSharedList<E> extends SharedList<E> {
 

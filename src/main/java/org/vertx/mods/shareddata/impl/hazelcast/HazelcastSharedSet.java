@@ -1,11 +1,7 @@
 package org.vertx.mods.shareddata.impl.hazelcast;
 
-import java.util.Set;
-import java.util.concurrent.ConcurrentMap;
+import org.vertx.mods.shareddata.SharedSet;
 
-import org.vertx.java.core.shareddata.SharedSet;
-
-import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.ISet;
 
 public class HazelcastSharedSet<E> extends SharedSet<E> {

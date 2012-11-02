@@ -1,6 +1,6 @@
 package org.vertx.mods.shareddata.impl.hazelcast;
 
-import org.vertx.java.core.shareddata.SharedMultiMap;
+import org.vertx.mods.shareddata.SharedMultiMap;
 
 public class HazelcastSharedMultiMap<K, V> extends SharedMultiMap<K, V> {
 

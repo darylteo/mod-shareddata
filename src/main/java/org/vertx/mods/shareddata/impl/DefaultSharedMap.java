@@ -1,9 +1,8 @@
 package org.vertx.mods.shareddata.impl;
 
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
-import org.vertx.java.core.shareddata.SharedMap;
+import org.vertx.mods.shareddata.SharedMap;
 
 class DefaultSharedMap<K, V> extends SharedMap<K, V> {
 

@@ -1,10 +1,12 @@
 package org.vertx.mods.shareddata.impl;
 
-import org.vertx.java.core.shareddata.SharedData;
-import org.vertx.java.core.shareddata.SharedList;
-import org.vertx.java.core.shareddata.SharedMap;
-import org.vertx.java.core.shareddata.SharedMultiMap;
-import org.vertx.java.core.shareddata.SharedSet;
+import org.vertx.mods.shareddata.SharedData;
+import org.vertx.mods.shareddata.SharedList;
+import org.vertx.mods.shareddata.SharedMap;
+import org.vertx.mods.shareddata.SharedMultiMap;
+import org.vertx.mods.shareddata.SharedSet;
+
+
 
 public class DefaultSharedData extends SharedData {
 

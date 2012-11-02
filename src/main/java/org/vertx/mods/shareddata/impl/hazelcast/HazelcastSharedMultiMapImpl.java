@@ -4,14 +4,13 @@ import java.util.Collection;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.MultiMap;
+import org.vertx.mods.shareddata.MultiMap;
 
-public class HazelcastSharedMultiMapImpl<K, V> implements org.vertx.java.core.shareddata.MultiMap<K, V> {
+public class HazelcastSharedMultiMapImpl<K, V> implements MultiMap<K, V> {
 
-  private MultiMap<K, V> multiMap;
+  private final com.hazelcast.core.MultiMap<K, V> multiMap;
 
-  public HazelcastSharedMultiMapImpl(MultiMap<K, V> multiMap) {
+  public HazelcastSharedMultiMapImpl(com.hazelcast.core.MultiMap<K, V> multiMap) {
     this.multiMap = multiMap;
   }
 

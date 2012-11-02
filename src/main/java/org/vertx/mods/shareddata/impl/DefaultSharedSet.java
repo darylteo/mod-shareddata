@@ -1,6 +1,6 @@
 package org.vertx.mods.shareddata.impl;
 
-import org.vertx.java.core.shareddata.SharedSet;
+import org.vertx.mods.shareddata.SharedSet;
 
 class DefaultSharedSet<E> extends SharedSet<E> {
 

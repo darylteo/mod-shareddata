@@ -3,12 +3,12 @@ package org.vertx.mods.shareddata.impl;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.vertx.java.core.shareddata.MultiMap;
+import org.vertx.mods.shareddata.MultiMap;
 
 class DefaultSharedMultiMapImpl<K, V> implements MultiMap<K, V> {
   public ConcurrentMap<K, ConcurrentMap<V, Object>> maps = new ConcurrentHashMap<>();
@@ -144,7 +144,7 @@ class DefaultSharedMultiMapImpl<K, V> implements MultiMap<K, V> {
 
   private static class BasicEntry<K, V> implements Map.Entry<K, V> {
 
-    private K key;
+    private final K key;
     private V value;
 
     public BasicEntry(K key, V value) {

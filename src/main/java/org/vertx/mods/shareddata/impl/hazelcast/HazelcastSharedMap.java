@@ -1,10 +1,7 @@
 package org.vertx.mods.shareddata.impl.hazelcast;
 
-import java.util.concurrent.ConcurrentMap;
+import org.vertx.mods.shareddata.SharedMap;
 
-import org.vertx.java.core.shareddata.SharedMap;
-
-import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 
 public class HazelcastSharedMap<K, V> extends SharedMap<K, V> {

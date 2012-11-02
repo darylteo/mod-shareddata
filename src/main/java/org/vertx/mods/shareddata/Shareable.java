@@ -16,6 +16,8 @@
 
 package org.vertx.mods.shareddata;
 
+import java.io.Serializable;
+
 /**
  * Marker interface.
  *
@@ -28,5 +30,5 @@ package org.vertx.mods.shareddata;
  *
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
-public interface Shareable {
+public interface Shareable extends Serializable{
 }
